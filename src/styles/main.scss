@@ -1,0 +1,80 @@
+@charset 'UTF-8';
+
+// ITCSS structure
+
+// 01. Settings
+@import '01-settings/settings.config';
+@import '01-settings/settings.core';
+@import '01-settings/settings.global';
+@import '01-settings/settings.animations';
+@import '01-settings/settings.breakpoints';
+@import '01-settings/settings.colors';
+@import '01-settings/settings.spacing';
+@import '01-settings/settings.typography';
+
+// 02.Tools
+@import 'sass-mq/mq';
+@import '02-tools/tools.animations';
+@import '02-tools/tools.aspect-ratio';
+@import '02-tools/tools.background';
+@import '02-tools/tools.center-block';
+@import '02-tools/tools.clearfix';
+@import '02-tools/tools.fill-img';
+@import '02-tools/tools.font-face';
+@import '02-tools/tools.hidden';
+@import '02-tools/tools.on-event';
+@import '02-tools/tools.placeholder';
+@import '02-tools/tools.pseudo';
+@import '02-tools/tools.rem';
+@import '02-tools/tools.spacing';
+@import '02-tools/tools.triangle';
+
+// 03. Generic
+@import '03-generic/generic.fonts';
+@import '03-generic/generic.box-sizing';
+@import 'normalize.css/normalize';
+@import '03-generic/generic.reset';
+
+// 04. Elements
+@import "04-elements/elements.page";
+@import '04-elements/elements.body';
+@import "04-elements/elements.headings";
+@import '04-elements/elements.links';
+@import "04-elements/elements.images";
+@import "04-elements/elements.forms";
+@import "04-elements/elements.tables";
+@import '04-elements/elements.selection';
+
+// 05. Objects
+@import '05-objects/objects.wrapper';
+@import '05-objects/objects.container';
+@import '05-objects/objects.grid';
+
+// 06. Components
+// @import 'slick-carousel/slick/slick.scss';
+// @import '06-components/components.slider';
+// @import '06-components/components.breadcrumbs';
+@import '06-components/components.button';
+@import '06-components/components.icons';
+@import '06-components/components.hamburger';
+// @import '06-components/components.content-zone';
+// @import '06-components/components.headings';
+@import '06-components/components.form';
+@import '06-components/components.inputbox';
+@import '06-components/components.input';
+// @import '06-components/components.logo';
+@import '06-components/components.header';
+// @import '06-components/components.header-menu';
+// @import '06-components/components.mobile-nav';
+// @import '06-components/components.header-search';
+@import '06-components/components.footer';
+// @import '06-components/components.modal';
+
+// 07. Utilities
+@import '07-utilities/utilities.clearfix';
+@import '07-utilities/utilities.spacing';
+@import '07-utilities/utilities.text';
+@import '07-utilities/utilities.visibility';
+
+// Shame
+// @import 'shame';

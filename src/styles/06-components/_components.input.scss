@@ -1,0 +1,40 @@
+/* ==========================================================================
+   #INPUT
+   ========================================================================== */
+
+.input,
+.textarea {
+  @include placeholder-color($color-secondary);
+  @include basic-transition((border-color, box-shadow));
+
+  padding: 0 28px;
+  height: 50px;
+  border: 1px solid #402822;
+  width: 100%;
+  font-style: italic;
+  font-weight: 300;
+  font-size: rem(16);
+  line-height: 1.15;
+  color: #000;
+  border-radius: 5px;
+  min-height: 0;
+  background-color: white;
+  box-shadow: inset 1.69px 3.625px 6.93px .07px rgba(0, 0, 0, .15);
+
+  &:focus {
+    outline: 2px solid $color-primary;
+    border-color: $color-primary;
+    box-shadow: none;
+  }
+
+  @include mq($from: md) {
+    font-size: rem(20);
+  }
+}
+
+.textarea {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  min-height: 150px;
+  resize: vertical;
+}

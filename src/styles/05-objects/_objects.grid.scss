@@ -1,0 +1,78 @@
+/* ==========================================================================
+   #GRID
+   ========================================================================== */
+
+$default-breakpoint-name: xl;
+$grid-cols: 12;
+$grid-gap-big: 30px;
+$grid-gap-mid: 16px;
+$grid-gap-small: 12px;
+$grid-container-width: 100%;
+$default-breakpoint-value: map_has_key($breakpoints, $default-breakpoint-name);
+$new-breakpoints: map_remove($breakpoints, $default-breakpoint-name);
+$grid-col-width: $grid-container-width/$grid-cols;
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: (-$grid-gap-small/2);
+  margin-right: (-$grid-gap-small/2);
+  font-size: 0;
+
+  @include mq($from: xs) {
+    margin-left: (-$grid-gap-mid/2);
+    margin-right: (-$grid-gap-mid/2);
+  }
+  @include mq($from: sm) {
+    margin-left: (-$grid-gap-big/2);
+    margin-right: (-$grid-gap-big/2);
+  }
+}
+
+.grid > [class*=grid__col] {
+  padding-left: $grid-gap-small/2;
+  padding-right: $grid-gap-small/2;
+
+  @include mq($from: xs) {
+    padding-left: ($grid-gap-mid/2);
+    padding-right: ($grid-gap-mid/2);
+  }
+  @include mq($from: sm) {
+    padding-left: ($grid-gap-big/2);
+    padding-right: ($grid-gap-big/2);
+  }
+}
+
+.grid__col {
+  width: 100%;
+
+
+  @for $i from 1 through 15 {
+
+    &-#{$i} {
+      width: $i * $grid-col-width;
+    }
+  }
+
+  &-grow {
+    flex-grow: 1;
+  }
+
+  @each $key, $val in $new-breakpoints {
+    @for $i from 1 through 15 {
+      @include mq($from: $key) {
+
+        &-#{$key}-#{$i} {
+          width: $i * $grid-col-width;
+        }
+      }
+    }
+  }
+
+  @for $i from 1 through 15 {
+
+    &-#{$default-breakpoint-name}-#{$i} {
+      width: $i * $grid-col-width;
+    }
+  }
+}

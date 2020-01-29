@@ -1,0 +1,47 @@
+/* ==========================================================================
+   #HAMBURGER
+   ========================================================================== */
+
+$hamburger-bar-width: 24px;
+$hamburger-bar-height: 3px;
+$hamburger-bar-color: $color-dark;
+$inner-y-margins: 6px;
+
+.hamburger {
+  position: relative;
+  padding: 8px;
+
+  @include on-event {
+    outline: none;
+
+    &::before,
+    &::after,
+    .hamburger__bar {
+      border-color: $color-primary;
+    }
+  }
+
+  @include mq($from: md) {
+    display: none;
+  }
+}
+
+.hamburger::before,
+.hamburger::after {
+  @include pseudo($pos: relative);
+}
+
+.hamburger::before,
+.hamburger::after,
+.hamburger__bar {
+  @include basic-transition((border-color));
+
+  display: block;
+  width: $hamburger-bar-width;
+  height: 0;
+  border-top: $hamburger-bar-height solid $hamburger-bar-color;
+}
+
+.hamburger__bar {
+  margin: $inner-y-margins 0;
+}

@@ -1,0 +1,17 @@
+//- Mixin to add svg-sprite icons
+mixin icon(name, mod, block)
+  if (block && mod)
+    svg(
+      class="icon icon-" + name + ' ' + mod,
+      aria-hidden="true",
+      focusable="false"
+      )
+      use(xlink:href="img/svg/symbol/sprite.svg#" + name)
+  else if (mod)
+    span(class="icon icon-" + name + ' ' + mod)
+      svg(aria-hidden="true", focusable="false")
+        use(xlink:href="img/svg/symbol/sprite.svg#" + name)
+  else
+    span(class="icon icon-" + name)
+      svg(aria-hidden="true", focusable="false")
+        use(xlink:href="img/svg/symbol/sprite.svg#" + name)

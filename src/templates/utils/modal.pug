@@ -1,0 +1,12 @@
+//- Mixin to add modal
+mixin modal()
+  .modal&attributes(attributes)(aria-hidden='true')
+    .modal__overlay(tabindex='-1', data-micromodal-close='')
+      .modal__container(role='dialog', aria-modal='true')
+        .modal__content
+          button.modal__close(
+            type="button"
+            aria-label='Закрыть попап',
+            data-micromodal-close='')
+            +icon('close')
+          block content

@@ -1,0 +1,28 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+
+
+// Standardise some UI treatments.
+
+$global-radius: 2px !default;
+$global-container-max-width: 1200px;
+$global-container-width: 1140px;
+
+
+// Utilities
+$use-aspect-ratio: false !default;
+$use-background-size: false !default;
+$use-clearfix: true !default;
+$use-text-colors: false !default;
+$use-bg-colors: false !default;
+$use-font-family: false !default;
+$use-font-size: false !default;
+$use-font-weight: false !default;
+$use-spacing: false !default;
+$use-spacing-responsive: false !default;
+$use-text-alignment: false !default;
+$use-text-style: false !default;

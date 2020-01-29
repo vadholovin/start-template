@@ -1,0 +1,55 @@
+/* ==========================================================================
+   #BREADCRUMBS
+   ========================================================================== */
+
+$breadpadding: 35px;
+
+.breadcrumbs {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  font-size: rem(13);
+}
+
+.breadcrumbs__item {
+  display: inline-block;
+  position: relative;
+  font-weight: 300;
+
+  &:not(:last-child) {
+    padding-right: $breadpadding;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: $breadpadding/2;
+      width: 13px;
+      height: 5px;
+      margin: auto;
+      transform: translateX(100%);
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg enable-background='new 0 0 476.213 476.213' version='1.1' viewBox='0 0 476.21 476.21' xml:space='preserve' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon fill='rgb(96, 96, 96)' points='345.61 107.5 324.39 128.71 418.79 223.11 0 223.11 0 253.11 418.79 253.11 324.39 347.5 345.61 368.71 476.21 238.11'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &:last-child {
+    pointer-events: none;
+  }
+}
+
+.breadcrumbs a {
+  @include basic-transition((border-color));
+
+  color: $color-grey-500;
+  border-bottom: 1px solid $color-grey-500;
+  line-height: 1.5;
+  text-decoration: none;
+
+  @include on-event {
+    border-color: transparent;
+  }
+}

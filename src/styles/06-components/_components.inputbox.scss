@@ -1,0 +1,43 @@
+/* ==========================================================================
+   #INPUTBOX
+   ========================================================================== */
+
+.inputbox {
+  display: block;
+  position: relative;
+}
+
+.inputbox__wrapper {
+  position: relative;
+}
+
+.inputbox__label {
+  font-size: inherit;
+  line-height: 1;
+}
+
+.inputbox__label--block {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.inputbox__label--placeholder {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-style: italic;
+  font-weight: 300;
+  color: $color-secondary;
+  z-index: 1;
+
+  &.is-hidden {
+    @include hidden-visually;
+  }
+}
+
+.inputbox__label--placeholder sup {
+  top: -.2em;
+  font-weight: 500;
+  color: $color-danger;
+}

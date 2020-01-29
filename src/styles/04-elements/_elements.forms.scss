@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+
+button {
+  font-family: $font-secondary;
+  cursor: pointer;
+}
+
+select,
+input,
+textarea {
+  font-family: $font-body;
+}
+
+select,
+input,
+textarea,
+button {
+  color: $color-secondary;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+}

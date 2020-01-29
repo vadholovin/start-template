@@ -1,0 +1,21 @@
+///* ========================================================================
+//   #FILL-IMG
+//   ======================================================================== */
+
+// Mixin to make an image like a background
+//
+// .usage {
+//   @include fill-img;
+// }
+@mixin fill-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  object-fit: cover;
+  width: 0;
+  min-width: 100%;
+  min-height: 100%;
+}

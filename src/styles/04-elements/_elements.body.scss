@@ -1,0 +1,32 @@
+/* ==========================================================================
+   #BODY
+   ========================================================================== */
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: $font-body;
+  font-size: $base-font-size;
+  line-height: 1.2;
+  color: $color-body;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
+  &.is-header-scrolled {
+    padding-top: 64px;
+  }
+
+  &.is-modal-open {
+    overflow: hidden;
+  }
+
+  &.is-nav-mobile-open {
+    overflow: hidden;
+
+    @include mq($from: md) {
+      overflow: visible;
+    }
+  }
+}

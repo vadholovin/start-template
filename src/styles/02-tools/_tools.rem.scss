@@ -1,0 +1,24 @@
+///* ==========================================================================
+//   #PX-TO-REM
+//   ========================================================================== */
+
+// Mixin to convert pixels to rem
+
+// Usage
+// font-size: rem(20)
+// margin: rem(40) rem(40);
+
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  $base: $base-font-size;
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1rem;
+}

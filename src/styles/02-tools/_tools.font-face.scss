@@ -1,0 +1,37 @@
+///* ========================================================================
+//   #FONT-FACE
+//   ======================================================================== */
+
+// Mixin to apply font-faces
+//
+// @include font-face('Corbel', 'CorbelBold', '../fonts/', 700, italic, 'oldie')
+@mixin font-face($font-name, $font-path-name, $font-weight: 400, $font-style: normal, $font-path: '../fonts/', $support-required: 'modern') {
+  @font-face {
+    font-family: $font-name;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    font-display: swap;
+    @if $support-required=='oldie' {
+      src: url('#{$font-path}#{$font-path-name}.eot');
+      src:
+        url('#{$font-path}#{$font-path-name}.eot?#iefix') format('embedded-opentype'),
+        url('#{$font-path}#{$font-path-name}.woff2') format('woff2'),
+        url('#{$font-path}#{$font-path-name}.woff') format('woff'),
+        url('#{$font-path}#{$font-path-name}.ttf') format('truetype');
+    }
+    @if $support-required=='recent' {
+      src:
+        url('#{$font-path}#{$font-path-name}.woff2') format('woff2'),
+        url('#{$font-path}#{$font-path-name}.woff') format('woff'),
+        url('#{$font-path}#{$font-path-name}.ttf') format('truetype');
+    }
+    @if $support-required=='modern' {
+      src:
+        url('#{$font-path}#{$font-path-name}.woff2') format('woff2'),
+        url('#{$font-path}#{$font-path-name}.woff') format('woff');
+    }
+  }
+  @if $support-required !='oldie' and $support-required !='recent' and $support-required !='modern' {
+    @error 'Invalid support-required value. Must be "oldie"==>IE8 and above/ Android native browser 4+/ Safari 4.3 OR "recent"==>IE9+/ Android native browser 4.0+/ Safari 4.3+ OR "modern"==>IE9+/ Android native browser 4.4+/ Safari 5.1+';
+  }
+}

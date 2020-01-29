@@ -1,0 +1,144 @@
+/* ==========================================================================
+   #MODAL
+   ========================================================================== */
+
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+
+  .modal__overlay {
+    z-index: 99999;
+  }
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__container {
+  position: relative;
+  width: 500px;
+  max-width: 90%;
+  max-height: 100vh;
+  padding: 56px 32px 40px 32px;
+  border: 1px solid $color-primary;
+  background-color: #fff;
+  overflow-y: auto;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .4);
+
+  @include mq($until: xs) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.modal__close {
+  display: inline-block;
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  padding: 12px;
+
+  @include on-event {
+    outline: none;
+    color: $color-primary;
+  }
+}
+
+.modal__heading {
+  margin-bottom: 32px;
+  font-family: $font-secondary;
+  font-weight: bold;
+  font-size: rem(22);
+  text-align: center;
+
+  @include mq($from: xs) {
+    font-size: rem(24);
+  }
+}
+
+.modal__text {
+  text-align: center;
+}
+
+.modal-form .inputbox {
+  margin-bottom: 16px;
+
+  &:last-of-type {
+    margin-bottom: 24px;
+  }
+}
+
+.modal-form .input {
+  font-size: rem(15);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-color: $color-grey;
+}
+
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    transform: translateY(15%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+.modal[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.modal[aria-hidden="false"] .modal__container {
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.modal[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.modal[aria-hidden="true"] .modal__container {
+  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}

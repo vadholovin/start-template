@@ -1,0 +1,17 @@
+///* ========================================================================
+//   #PSEUDO
+//   ======================================================================== */
+
+// Mixin to add base properties for pseudo-elements
+//
+// .usage::after {
+//   @include pseudo;
+//   top: 10px;
+//   left: 10px;
+//   width: 150px;
+// }
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}

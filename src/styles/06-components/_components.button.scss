@@ -1,0 +1,86 @@
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+
+.c-btn {
+  @include basic-transition((transform, color, border-color, background-color));
+
+  display: inline-block;
+  padding: 1em 1.5em;
+  font-size: rem(17);
+  line-height: 1.15;
+  font-weight: normal;
+  text-decoration: none;
+  color: $color-body;
+  border: 1px solid $color-body;
+  border-radius: $global-radius;
+
+  @include on-event {
+    color: $color-grey;
+    border-color: currentColor;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  @include mq($from: lg) {
+    padding-right: 2em;
+    padding-left: 2em;
+  }
+}
+
+.c-btn--block {
+  display: block;
+  width: 100%;
+}
+
+.c-btn--lg {
+  padding-top: 20px;
+  padding-bottom: 19px;
+}
+
+.c-btn--primary {
+  border-color: $color-primary;
+  color: #fff;
+  background-color: $color-primary;
+
+  @include on-event {
+    border-color: $color-primary;
+    color: $color-primary;
+    background-color: transparent;
+  }
+}
+
+// .c-btn--secondary {
+//   border-color: $color-secondary;
+//   color: $color-secondary;
+
+//   @include on-event {
+//     border-color: $color-dark;
+//     color: $color-dark;
+//   }
+// }
+
+.c-btn--outline {
+  border-color: $color-primary;
+  color: $color-primary;
+  background-color: transparent;
+
+  @include on-event {
+    border-color: $color-primary;
+    color: #fff;
+    background-color: $color-primary;
+  }
+}
+
+.c-btn--icon {
+
+  .icon {
+    position: relative;
+    width: .65em;
+    height: .65em;
+    margin-top: -.15em;
+    margin-left: 8px;
+  }
+}

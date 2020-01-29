@@ -1,0 +1,87 @@
+/* ==========================================================================
+   #SLIDER
+   ========================================================================== */
+
+.slider__wrapper {
+  position: relative;
+}
+
+.slider-controls__prev,
+.slider-controls__next {
+  @include basic-transition((border-color, background-color, color));
+
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #d5d5d5;
+  border-radius: 50%;
+  font-size: .9em;
+  color: $color-grey;
+
+  @include on-event {
+    outline: none;
+    color: #fff;
+    border-color: $color-primary;
+    background-color: $color-primary;
+  }
+}
+
+.slider-controls__prev .icon,
+.slider-controls__next .icon {
+  @include center-block;
+}
+
+.slider-controls__prev .icon {
+  transform: translate(-50%, -50%) rotate(.5turn);
+}
+
+.slider-controls--t-center {
+
+  .slider-controls__prev,
+  .slider-controls__next {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .slider-controls__next {
+    left: auto;
+    right: 0;
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  text-align: center;
+}
+
+.slick-dots > li {
+  display: inline-block;
+}
+
+.slick-dots > li + li {
+  margin-left: 1rem;
+}
+
+.slick-dots button {
+  @include basic-transition((opacity));
+
+  width: 10px;
+  height: 10px;
+  font-size: 0;
+  background-color: #fff;
+  opacity: .4;
+
+  @include on-event {
+    opacity: 1;
+  }
+}
+
+.slick-active button {
+  opacity: 1;
+}

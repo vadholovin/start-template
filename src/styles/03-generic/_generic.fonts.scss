@@ -1,0 +1,38 @@
+/* ==========================================================================
+   #FONTS
+   ========================================================================== */
+
+// How to add fonts
+
+// Mixin:
+// font-face($font-name, $font-path-name, $font-weight, $font-style, $font-path, $support-required)
+
+// Usage:
+// @include font-face('Corbel', 'CorbelBold', 700, italic, '../fonts/', 'oldie')
+
+// $support-required options:
+// 'oldie' - for older browsers
+// 'recent' - for recent browsers
+// 'modern' - for modern browsers (default)
+
+// Weights:
+// 100 — Thin
+// 200 — Extra Light, Ultra Light
+// 300 — Light
+// 400 — Normal, Book, Regular (default)
+// 500 — Medium
+// 600 — Semi Bold, Demi Bold
+// 700 — Bold
+// 800 — Extra Bold, Ultra Bold
+// 900 — Black, Heavy
+
+@include font-face('Gotham Pro', 'GothamPro');
+@include font-face('Gotham Pro', 'GothamPro-Light', 300);
+@include font-face('Gotham Pro', 'GothamPro-Medium', 500);
+@include font-face('Gotham Pro', 'GothamPro-Bold', 700);
+@include font-face('Gotham Pro', 'GothamPro-Black', 900);
+
+
+@include font-face('Rodchenko', 'Rodchenko-Regular');
+@include font-face('Rodchenko', 'Rodchenko-Bold', 700);
+

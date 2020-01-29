@@ -1,0 +1,11 @@
+///* ==========================================================================
+//   #BACKGROUND
+//   ========================================================================== */
+
+// Mixin to quickly add a bunch of background properties
+
+@mixin background($bg-pos: center, $bg-size: cover) {
+  background-repeat: no-repeat;
+  background-position: $bg-pos;
+  background-size: $bg-size;
+}
